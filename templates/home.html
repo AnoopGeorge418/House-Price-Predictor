@@ -3,11 +3,26 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
+        <title>House Price Predictor - Simple Linear Regression Model</title>
+        <meta name="description" content="This model helps in predicting house prices based on the number of private rooms.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     </head>
     <body>
+        <div class='container mt-5'>
+            <form action="{{ url_for('predict_data') }}" method="post">
+                <div class='form-group'>
+                    <label for="Number_Of_Private_Rooms">House Price Predictor Model</label>
+                    <input type="text" name="Number_Of_Private_Rooms" placeholder="Enter number of private rooms" required class="form-control mb-2">
+                    <button type="submit" class="btn btn-primary btn-block btn-lg">Predict</button>
+                </div>
+                <h2 class="mt-4">The Median house price prediction is {{ results }}</h2>
+            </form>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
     </body>
 </html>
